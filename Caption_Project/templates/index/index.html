@@ -1,15 +1,106 @@
 {%load static%}
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
+ <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+   <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <title>Upload_Image</title>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <title>Image Caption </title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/cover/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+
+
+	<style>
+		body,
+		html {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			background: #7abecc !important;
+		}
+		.user_card {
+			width: 350px;
+			margin-top: auto;
+			margin-bottom: auto;
+			background: #0d0e0d;
+			position: relative;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			padding: 10px;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			-webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			-moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			border-radius: 5px;
+
+		}
+
+		.form_container {
+			margin-top: 20px;
+		}
+
+		#form-title{
+			color: #fff;
+
+		}
+
+		.login_btn {
+			width: 100%;
+			background: #33ccff !important;
+			color: white !important;
+		}
+		.login_btn:focus {
+			box-shadow: none !important;
+			outline: 0px !important;
+		}
+		.login_container {
+			padding: 0 2rem;
+		}
+		.input-group-text {
+			background: #f7ba5b !important;
+			color: white !important;
+			border: 0 !important;
+			border-radius: 0.25rem 0 0 0.25rem !important;
+		}
+		.input_user,
+		.input_pass:focus {
+			box-shadow: none !important;
+			outline: 0px !important;
+		}
+
+		#messages{
+			background-color: grey;
+			color: #fff;
+			padding: 10px;
+			margin-top: 10px;
+		}
+		.material-icons {
+  			vertical-align: middle;
+			font-size: 40px;
+		}
+	</style>
+
   </head>
   <body>
     {% if user.is_authenticated%}
@@ -42,48 +133,26 @@
       </nav>
     
    
-      <div class="container"style="margin-top:350px;">
-        <div class="col-md-12 text-center">
-            <a href="/upload"><button type="button" class="btn btn-primary mx-2">Add Image</button></a>
-            <a href="/caption"><button type="button" class="btn btn-warning">Write Caption</button></a>
-        </div>
-    </div>
-    
-    <script>
-        document.getElementById("add_image").onclick=function (ev) {
-           
-            var image=document.getElementById("images");
-            var preview=document.createElement("img");
-            preview.style.width="150px";
-            preview.style.height="150px";
-    
-    
-            var newInput=document.createElement("input");
-            newInput.type="file";
-            newInput.name="file[]";
-            var br=document.createElement("br");
-            var br1=document.createElement("br");
-    
-            newInput.onchange=function(ev1){
-                if(this.files && this.files[0])
-                {
-                    var fileReader=new FileReader();
-                    fileReader.onload=function(ev2){
-                        preview.src=ev2.target.result;
-    
-                    };
-                    fileReader.readAsDataURL(this.files[0])
-                }
-            };
-           
-            image.appendChild(newInput)
-            image.appendChild(preview);
-            image.appendChild(br);
-            image.appendChild(br1);
-    
-        }
-        </script>
-        
+          <div class="container h-100">
+		<div class="d-flex justify-content-center h-100">
+			<div class="user_card">
+				<div class="d-flex justify-content-center">
+
+
+					<h3 id="form-title">HOME</h3>
+				</div>
+				<div class="d-flex justify-content-center form_container">
+					<form method="POST" action="">
+						{% csrf_token %}
+
+
+							<div class="d-flex justify-content-center mt-3 login_container">
+				 				<a href="{%url 'upload' %}" class="btn btn-danger  "style="margin-right:10px;">UPLOAD</a>
+                                <a href="{%url 'caption' %}" class="btn btn-primary  "style="margin-right:10px;">CAPTION</a>
+				   			</div>
+					</form>
+
+				</div>
     {%else%}
     <a href="{% url 'login' %}">Click here to login again.</a>
     {% endif %}
@@ -92,103 +161,3 @@
   </body>
 </html>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <title>Django multiple file upload</title>
-</head>
-<body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-   <form method="post"action="/upload_save" enctype="multipart/form-data">
-    {%csrf_token%}
-    <div id ="images">
-   </div>
-   <input type="button"name="add_image" id ="add_image"value="Add Image">
-   <input type="submit"value="Save Data">
-   
-</form>
-<script>
-    document.getElementById("add_image").onclick=function (ev) {
-       
-        var image=document.getElementById("images");
-        var preview=document.createElement("img");
-        preview.style.width="100px";
-        preview.style.height="100px";
-
-
-        var newInput=document.createElement("input");
-        newInput.type="file";
-        newInput.name="file[]";
-        var br=document.createElement("br");
-        var br1=document.createElement("br");
-
-        newInput.onchange=function(ev1){
-            if(this.files && this.files[0])
-            {
-                var fileReader=new FileReader();
-                fileReader.onload=function(ev2){
-                    preview.src=ev2.target.result;
-
-                };
-                fileReader.readAsDataURL(this.files[0])
-            }
-        };
-        image.appendChild(preview)
-        image.appendChild(newInput);
-        image.appendChild(br);
-        image.appendChild(br1);
-
-    }
-    </script>
-</body>
-</html>
--->

@@ -47,7 +47,7 @@ def upload_save(request):
         images=Image(image=file_path)
         images.save()
         
-    return render(request,'index/success_upload.html')
+     return redirect('caption')
 
 #views for the caption page
 
