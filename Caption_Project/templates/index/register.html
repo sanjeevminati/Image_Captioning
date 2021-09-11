@@ -27,6 +27,12 @@
   </head>
 
   <body>
+	  {% if user.is_authenticated%}
+
+  <script type="text/javascript">
+      window.location.href = "{%url 'index' %}"
+  </script>
+  {%else%}
     <form class="form-signin"action=""method="POST">
       {%csrf_token%}
       <div class="text-center mb-2">
@@ -40,4 +46,5 @@
       
     </form>
   </body>
+	{%endif%}
 </html>
