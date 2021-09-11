@@ -1,0 +1,158 @@
+{%load static%}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Upload_Image</title>
+  </head>
+  <body>
+    {% if user.is_authenticated%}
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Image Captioning</a>
+          <i class="material-icons bg-light ">collections</i>
+         
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+             
+            </ul>
+            <span class="navbar-text">
+              <a href=""class="btn btn-danger my-2 mx-3"style="width:130px;height:36px;">Hi! {{ user.username }}</a>
+             
+              <!-- <a href="/caption/" class="btn btn-success  "style="margin-right:10px;">WRITE CAPTION</a>  -->
+             
+              
+              <a href="/index"><i class="material-icons bg-dark mx-2  ">home</i></a>
+            <a href="/logout/"><i class="material-icons bg-dark mx-3 ">logout</i></a>
+            </span>
+          </div>
+        </div>
+        
+      </nav>
+      <div class="container my-3"style="width:55vh;height:20vh;">
+        <img src="https://cdn.pixabay.com/photo/2017/01/13/01/22/ok-1976099_960_720.png" class="img-fluid" alt="...">
+        <h3 style="text-align: center;">Image Uploaded Successfully!</h3>
+      </div>
+      
+    
+    
+        
+    {%else%}
+    <a href="{% url 'login' %}">Click here to login again.</a>
+    {% endif %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <title>Django multiple file upload</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+   <form method="post"action="/upload_save" enctype="multipart/form-data">
+    {%csrf_token%}
+    <div id ="images">
+   </div>
+   <input type="button"name="add_image" id ="add_image"value="Add Image">
+   <input type="submit"value="Save Data">
+   
+</form>
+<script>
+    document.getElementById("add_image").onclick=function (ev) {
+       
+        var image=document.getElementById("images");
+        var preview=document.createElement("img");
+        preview.style.width="100px";
+        preview.style.height="100px";
+
+
+        var newInput=document.createElement("input");
+        newInput.type="file";
+        newInput.name="file[]";
+        var br=document.createElement("br");
+        var br1=document.createElement("br");
+
+        newInput.onchange=function(ev1){
+            if(this.files && this.files[0])
+            {
+                var fileReader=new FileReader();
+                fileReader.onload=function(ev2){
+                    preview.src=ev2.target.result;
+
+                };
+                fileReader.readAsDataURL(this.files[0])
+            }
+        };
+        image.appendChild(preview)
+        image.appendChild(newInput);
+        image.appendChild(br);
+        image.appendChild(br1);
+
+    }
+    </script>
+</body>
+</html>
+-->
