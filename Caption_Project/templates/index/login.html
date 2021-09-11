@@ -13,6 +13,18 @@
 
     <!-- Custom styles for this template -->
     <link href="{% static 'index/floating-labels.css'%}"rel="stylesheet">
+       <style>
+		body,
+		html {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			background: #7abecc !important;
+		}
+
+
+</style>
+    
   </head>
 
   <body>
@@ -43,68 +55,3 @@
     </form>
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--
-{%load crispy_forms_tags%}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <title>Document</title>
-</head>
-<body>
-  <form action=""method="POST">
-    {%csrf_token%}
-  {{form |crispy}}
-  <button class="btn btn-primary" type="submit">Register</button>
-</form>
-</body>
-</html>
--->
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!--{%load crispy_forms_tags%}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <title>Document</title>
-</head>
-<body>
-  <form action=""method="POST">
-    {%csrf_token%}
-  {{form |crispy}}
-  <button class="btn btn-primary" type="submit">Register</button>
-</form>
-</body>
-</html>
--->
