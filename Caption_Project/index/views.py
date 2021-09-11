@@ -47,7 +47,7 @@ def upload_save(request):
         images=Image(image=file_path)
         images.save()
         
-     return redirect('caption')
+    return redirect('success_upload')
 
 #views for the caption page
 
@@ -58,3 +58,8 @@ def caption(request):
         'rand_image':rand_image
     }
     return render(request,'index/caption.html',context)
+
+
+def success_upload(request):
+
+     return render(request,'index/success_upload.html')
