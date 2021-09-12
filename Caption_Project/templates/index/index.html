@@ -53,7 +53,6 @@
 			-webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 			-moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 			border-radius: 5px;
-			height:200px;
 
 		}
 
@@ -98,42 +97,42 @@
 		}
 		.material-icons {
   			vertical-align: middle;
-			font-size: 40px;
+
 		}
 	</style>
 
   </head>
   <body>
     {% if user.is_authenticated%}
-    
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Image Captioning</a>
           <i class="material-icons bg-light ">collections</i>
-         
+
 
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-             
+
             </ul>
             <span class="navbar-text">
               <a href=""class="btn btn-danger my-2 mx-3">Hi! {{ user.username }}</a>
-              
+
               <!-- <a href="/caption/" class="btn btn-success  "style="margin-right:10px;">WRITE CAPTION</a>  -->
-             
-              
+
+
             <a href="/index"><i class="material-icons bg-dark mx-2 "style="font-size: 25px;">home</i></a>
             <a href="/logout/"><i class="material-icons bg-dark mx-3 "style="font-size: 25px;">logout</i></a>
             </span>
           </div>
         </div>
-        
+
       </nav>
-    
-   
+
+
           <div class="container h-100">
 		<div class="d-flex justify-content-center h-100">
 			<div class="user_card">
@@ -148,8 +147,8 @@
 
 
 							<div class="d-flex justify-content-center mt-3 login_container">
-				 				<a href="{%url 'upload' %}" class="btn btn-danger  "style="margin-right:10px;">UPLOAD IMAGE</a>
-                                <a href="{%url 'caption' %}" class="btn btn-primary  "style="margin-right:10px;">WRITE CAPTION</a>
+				 				<a href="{%url 'upload' %}" class="btn btn-danger  "style="margin-right:10px;">UPLOAD</a>
+                                <a href="{%url 'caption' %}" class="btn btn-primary  "style="margin-right:10px;">CAPTION</a>
 				   			</div>
 					</form>
 
@@ -161,4 +160,3 @@
 
   </body>
 </html>
-
