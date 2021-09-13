@@ -74,29 +74,31 @@
 			<div class="alert alert-warning" role="alert">
 				Write Captions
 			  </div>
-			  <form>
+			
+			  <form method="post" action="/success_caption_upload/">
+				{%csrf_token%}
 				<div class="mb-3">
 					<label for="exampleFormControlTextarea1" class="form-label">Caption1</label>
-					<textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+					<textarea class="form-control" id="caption1" name="caption1"rows="2"></textarea>
 				  </div>
 				  <div class="mb-3">
 					<label for="exampleFormControlTextarea1" class="form-label">Caption2</label>
-					<textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+					<textarea class="form-control" id="caption2" name="caption2"rows="2"></textarea>
 				  </div>
 				  <div class="mb-3">
 					<label for="exampleFormControlTextarea1" class="form-label">caption3</label>
-					<textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+					<textarea class="form-control" id="caption3"  name="caption3"rows="2"></textarea>
 				  </div>
 				  <div class="mb-3">
 					<label for="exampleFormControlTextarea1" class="form-label">caption4</label>
-					<textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+					<textarea class="form-control" id="caption4"  name="caption4"rows="2"></textarea>
 				  </div>
 				  <div class="mb-3">
 					<label for="exampleFormControlTextarea1" class="form-label">Caption5</label>
-					<textarea class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+					<textarea class="form-control" id="caption5"  name="caption5" rows="2"></textarea>
 				  </div>
 				  <div class="text-center">
-					<button type="button" class="btn btn-success">Save Captions</button>
+					<button type="submit" class="btn btn-success">Save Captions</button>
 				  </div>
 				
 			  </form>

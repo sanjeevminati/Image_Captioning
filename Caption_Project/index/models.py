@@ -19,7 +19,14 @@ class Image(models.Model):
     image=models.FileField(upload_to=path_and_rename,max_length=255)
 
 
-
+class Caption(models.Model):
+    caption1=models.TextField()
+    caption2=models.TextField()
+    caption3=models.TextField()
+    caption4=models.TextField()
+    caption5=models.TextField()
+    image=models.FileField(upload_to=path_and_rename,max_length=255,null=True)
+   
 
 #     # def __str__(self):
 #     #     return self.title

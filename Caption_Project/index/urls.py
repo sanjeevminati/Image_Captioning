@@ -12,6 +12,7 @@ urlpatterns = [
     path('upload/', views.upload,name="upload"),
     path('upload_save',views.upload_save,name="upload_save"),
     path('caption/',views.caption,name="caption"),
-    path('success_upload/',views.success_upload,name="success_upload")
+    path('success_upload/',views.success_upload,name="success_upload"),
+    path('success_caption_upload/',views.success_caption_upload,name="success_caption_upload")
 ]
 

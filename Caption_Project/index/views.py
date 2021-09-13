@@ -4,6 +4,7 @@ from .forms import UserRegisterForm
 from django.contrib import messages
 from django.core.files.storage import FileSystemStorage
 from .models import Image
+from .models import Caption
 import random
 
 def home(request):
@@ -62,4 +63,18 @@ def caption(request):
 
 def success_upload(request):
 
-     return render(request,'index/success_upload.html')
+    return render(request,'index/success_upload.html')
+
+def success_caption_upload(request):
+    if request.method== "POST":
+        caption1=request.POST.get('caption1')
+        caption2=request.POST.get('caption2')
+        caption3=request.POST.get('caption3')
+        caption4=request.POST.get('caption4')
+        caption5=request.POST.get('caption5')
+     
+        caption=Caption(caption1=caption1,caption2=caption2,caption3=caption3,caption4=caption4,caption5=caption5)
+        caption.save()
+
+    return render(request,'index/success_caption_upload.html')
+  
