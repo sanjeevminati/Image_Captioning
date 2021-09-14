@@ -56,7 +56,12 @@
 
       {{form|crispy}}
       <button class="btn btn-lg btn-danger btn-block" type="submit">Login</button><br>
-      Don't have a account?<a href="/register"><button type="button" class="btn btn-link">Register</button></a>
+      <center>
+      Don't have a account?<a href="/register"><button type="button" class="btn btn-link">Register</button></a><br><br>
+    </center>
+      <center>
+        <a href="{% url 'password_reset' %}"><button type="button" class="btn btn-link"><b>Forgot password?</b></button></a>
+    </center>
       
     </form>
   </body>

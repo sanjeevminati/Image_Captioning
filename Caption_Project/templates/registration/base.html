@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Password Reset</title>
+</head>
+<body style="background-color: aquamarine;">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Image Captioning</a>
+          <i class="material-icons bg-light ">collections</i>
+
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+            </ul>
+            <span class="navbar-text">
+              <!-- <a href="/register"class="btn btn-danger my-2 mx-3">Register</a> -->
+              <a href="/register"><i class="material-icons bg-dark mx-3 "style="font-size: 25px;">app_registration</i></a>
+              <a href="/login"><i class="material-icons bg-dark mx-3 "style="font-size: 25px;">login</i></a>
+
+
+              <!-- <a href="/caption/" class="btn btn-success  "style="margin-right:10px;">WRITE CAPTION</a>  -->
+
+
+           
+                
+            </span>
+          </div>
+        </div>
+
+      </nav>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <div class="page-header">
+        <h1><a href="/"></a></h1>
+    </div>
+    <div class="content container "><br><br>
+        <div class="row">
+            <div class="col-md-8">
+            {% block content %} 
+            {% endblock %}
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

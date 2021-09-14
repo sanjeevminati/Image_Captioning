@@ -8,7 +8,7 @@ from django.contrib.auth.models import User
 
 
 def path_and_rename(instance, filename):        #used for renaming image
-    upload_to = 'media'
+    upload_to = ''
     ext = filename.split('.')[-1]
     filename = '{}.{}'.format(uuid4().hex, ext)
     # return the whole path to the file
