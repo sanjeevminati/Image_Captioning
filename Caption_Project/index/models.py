@@ -20,12 +20,13 @@ class Image(models.Model):
 
 
 class Caption(models.Model):
+    imageURL = models.FileField(upload_to=path_and_rename, max_length=255, null=True)
     caption1=models.TextField()
     caption2=models.TextField()
     caption3=models.TextField()
     caption4=models.TextField()
     caption5=models.TextField()
-    image=models.FileField(upload_to=path_and_rename,max_length=255,null=True)
+    
    
 
 #     # def __str__(self):
