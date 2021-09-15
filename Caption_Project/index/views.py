@@ -72,8 +72,9 @@ def success_caption_upload(request):
         caption3=request.POST.get('caption3')
         caption4=request.POST.get('caption4')
         caption5=request.POST.get('caption5')
+        ImageURL = request.POST.get('imageID')
      
-        caption=Caption(caption1=caption1,caption2=caption2,caption3=caption3,caption4=caption4,caption5=caption5)
+        caption=Caption(caption1=caption1,caption2=caption2,caption3=caption3,caption4=caption4,caption5=caption5, imageURL=ImageURL)
         caption.save()
 
     return render(request,'index/success_caption_upload.html')
